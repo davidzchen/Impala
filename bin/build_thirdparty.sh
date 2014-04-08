@@ -101,8 +101,6 @@ done
 bin=`dirname "$0"`
 bin=`cd "$bin"; pwd`
 
-. "$bin"/impala-config.sh
-
 USE_PIC_LIB_PATH=${PIC_LIB_PATH:-}
 
 function build_preamble() {
