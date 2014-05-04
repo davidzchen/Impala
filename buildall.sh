@@ -145,12 +145,14 @@ elif [ "$SNAPSHOT_FILE" != "" ] &&  [ ! -e $SNAPSHOT_FILE ]; then
   exit 1
 fi
 
-# Sanity check that thirdparty is built.
-if [ ! -e $IMPALA_HOME/thirdparty/gflags-${IMPALA_GFLAGS_VERSION}/libgflags.la ]
+# Incrementally build thirdparty
+cd $IMPALA_HOME/thirdparty
+if [ $CLEAN_ACTION -eq 1 ]
 then
-  echo "Couldn't find thirdparty build files.  Building thirdparty."
-  $IMPALA_HOME/bin/build_thirdparty.sh $([ ${CLEAN_ACTION} -eq 0 ] && echo '-noclean')
+  git clean -dfx
 fi
+cmake .
+make
 
 if [ -e $HADOOP_LZO/build/native/Linux-*-*/lib/libgplcompression.so ]
 then
