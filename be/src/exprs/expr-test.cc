@@ -1731,6 +1731,7 @@ TEST_F(ExprTest, StringParseUrlFunction) {
 }
 
 TEST_F(ExprTest, UtilityFunctions) {
+  TestStringValue("database()", "default");
   TestStringValue("current_database()", "default");
   TestStringValue("user()", "impala_test_user");
   TestStringValue("version()", GetVersionString());

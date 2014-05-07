@@ -219,6 +219,7 @@ functions = [
 
   # Utility functions
   [['current_database'], 'STRING', [], symbol('UtilityFunctions', 'CurrentDatabase')],
+  [['database'], 'STRING', [], symbol('UtilityFunctions', 'CurrentDatabase')],
   [['user'], 'STRING', [], symbol('UtilityFunctions', 'User')],
   [['sleep'], 'BOOLEAN', ['INT'], symbol('UtilityFunctions', 'Sleep')],
   [['pid'], 'INT', [], symbol('UtilityFunctions', 'Pid')],
