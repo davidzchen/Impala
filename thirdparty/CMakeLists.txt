@@ -111,7 +111,7 @@ ExternalProject_Add(snappy
   DOWNLOAD_COMMAND ""
   DOWNLOAD_DIR ${SNAPPY_DIR}
   SOURCE_DIR ${SNAPPY_DIR}
-  CONFIGURE_COMMAND ./configure --with-pic --prefix=${SNAPPY_DIR}/build
+  CONFIGURE_COMMAND libtoolize -f && ./configure --with-pic --prefix=${SNAPPY_DIR}/build
   BUILD_COMMAND make install
   BUILD_IN_SOURCE 1
   INSTALL_COMMAND "")
